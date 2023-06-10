@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.heading h3{
+    font-weight: bolder;
+    color: #227C70;
+}
+.heading{
+    margin-top: 3em;
+    border-radius: 10px;
+
+}
+.todo-body{
+    height: auto;
+    
+}
+.inputarea{
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+    height: 5em;
+
+}
+.inputarea input{
+    width: 85%;
+    border: 1px solid black;
+}
+.inputarea button{
+    width: 15%;
+}
+ul{
+    padding: 0;
+}
+li{
+    font-weight: bold;
+}
+i{
+    cursor: pointer;
+}
+.check{
+    transition: 0.1s;
+    color: black;
+    font-size: 22px;
+
+
+}
+.check:hover{
+    color: green;
+}
+.trash{
+    transition: 0.1s;
+    color: black;
+    font-size: 22px;
+
+}
+.trash:hover{
+    color:red;
+}

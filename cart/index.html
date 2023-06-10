@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+
+    <div class="container cartmodal  ">
+        <div class="row">
+            <div class="col-10 position-absolute  offset- mt-5 bg-light d-flex justify-content-center">
+                <div class="cart ">
+                    <div class="cart-tags p-3">
+                        <ul id="cart-items"></ul>
+                        <p>Total: <i class="fa-solid fa-indian-rupee-sign "></i> <span id="total-price">0.00</span></p>
+                    </div>
+                    <div class="cartbtns mt-3">
+                        <button  class="btn btn-success ms-2">Checkout </button>
+                        <button class="btn btn-warning float-end me-2 close" >close cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+    
+    
+    <div class="container">
+        <button type="button" class="btn btn-primary cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+        <div class="row "> 
+            <div class="products d-flex mt-5    ">
+   
+                <div class="col-4">
+                    <div class="product">
+                        <div class="product-img">
+                            <img src="img/shoesone.webp" alt="">
+
+                        </div>
+                        <label for="" class="mt-2">Nike Blazer Mid 77</label>
+
+                        <div class="d-flex pricelabel ">
+                            
+                            <button class="btn btn-outline-primary add-to-cart-btn" data-price="999" data-product="Nike Blazer Mid 77">Add to Cart</button>
+                            <p class="text-end  text ">MRP: <i class="fa-solid fa-indian-rupee-sign fs-5 mt-3"> 999</i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="product">
+                        <div class="product-img ">
+                            <img src="img/shoestwo.webp" alt="">
+
+                        </div>
+                        <label for="" class="mt-2">Nike Air Huarache</label>
+
+                        <div class="d-flex pricelabel ">
+                        
+                            <button class="btn btn-outline-primary add-to-cart-btn" data-price="699" data-product="Nike Air Huarache">Add to Cart</button>
+                            <p class="text-end  text ">MRP: <i class="fa-solid fa-indian-rupee-sign fs-5 mt-3">699</i></p>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="product">
+                        <div class="product-img">
+                            <img src="img/shoethird.webp" alt="">
+
+                        </div>
+                        <label for="" class="mt-2">Nike Air Max Impact 4</label>
+                        <div class="d-flex pricelabel ">
+                          
+                            <button class="btn btn-outline-primary add-to-cart-btn " data-price="1199" data-product="Nike Air Max Impact ">Add to Cart</button>
+                            <p class="text-end  text ">MRP: <i class="fa-solid fa-indian-rupee-sign fs-5 mt-3"> 1199</i></p>
+                        </div>
+                    </div>  
+                </div>
+    
+        </div>
+        </div>
+    </div>
+   
+  
+  <script src="js/jquery-3.7.0.min.js"></script>
+  <script>
+    $(document).on('click','.cart-btn',function(){
+        $(".cartmodal").addClass('modalshow');
+    });
+    $(document).on('click','.close',function(){
+        $(".cartmodal").removeClass('modalshow');
+    });
+    var addToCartBtn = document.querySelectorAll('.add-to-cart-btn');
+    var cartItem = document.getElementById('cart-items');
+    var TPrice = document.getElementById('total-price');
+
+    var cartItems = [];
+    var totalPrice = 0;
+
+    addToCartBtn.forEach(button => {
+        button.addEventListener('click', () => {
+        var productName = button.dataset.product;
+        var price = parseFloat(button.dataset.price);
+
+        cartItems.push({ name: productName, price: price });
+
+        totalPrice += price;
+
+        renderCart();
+        });
+    });
+
+    function renderCart() {
+        cartItem.innerHTML = '';
+
+        cartItems.forEach(item => {
+        var li = document.createElement('li');
+        li.innerText = `${item.name} - Rs ${item.price.toFixed(2)}`;
+        cartItem.appendChild(li);
+  });
+
+        TPrice.innerText = totalPrice.toFixed(2);
+}
+
+
+
+  </script>
+</body>
+</html>

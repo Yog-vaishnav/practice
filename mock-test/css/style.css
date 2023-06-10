@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.modal{
+ 
+    position: absolute;
+   
+}
+.mcq{
+    height: 33em;
+    border: 1px solid #828385;
+    border-radius: 10px;
+}
+.list-ol{
+    height: 18em;
+    border-bottom: 1px solid #CCCDCE;
+    
+}
+ol{
+    position: absolute;
+
+}
+.list-ol .active{
+    display: block;
+}
+ol{
+    display: none;
+}
+.modal-body{
+    height: 7em;
+    text-align: center;
+}
+.modal-body input{
+    width: 100%;
+    border: 1px solid #CCCDCE;
+}
+.badge{
+    cursor: pointer;
+    color: black;
+}
+
+.selectbadge{
+    background-color: #58A783;
+    color: white;
+    font-size: 16px;
+}
+.modal-foot{
+    /* border-top: 1px solid #CCCDCE; */
+    height: 3em;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+#modal{
+    /* display: block; */
+    /* margin-top: 3em; */
+}
+#body{
+    height: 18em;
+}
